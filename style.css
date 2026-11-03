@@ -1,0 +1,298 @@
+/* ===== Police Sprintura Demo =====
+   Mets le fichier de la police dans un dossier "fonts" et vérifie le nom ci-dessous.
+   Si le fichier n'existe pas, le navigateur utilise Orbitron à la place. */
+@font-face {
+  font-family: 'Sprintura Demo';
+  src: url('fonts/Sprintura-Demo.otf') format('opentype');
+  font-display: swap;
+}
+
+/* ===== Variables (couleurs et polices, tirées de Figma) ===== */
+:root {
+  --bg: #003a57;
+  --header: #c8d3e0;
+  --navy: #0a1a33;
+  --navy-border: #1f3a5f;
+  --cyan: #00cdef;
+  --teal: #0086a0;
+  --line: #01618d;
+  --white: #ffffff;
+  --font-title: 'Sprintura Demo', 'Orbitron', sans-serif;
+  --font-nav: 'Holtwood One SC', serif;
+  --font-quote: 'Alfa Slab One', serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ===== Header ===== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--header);
+  padding: 8px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.brand-logo { height: 62px; width: auto; display: block; }
+
+/* Texte "MINDSPARK" sous le logo (police Sprintura Demo, dégradé comme dans Figma) */
+.logo-name {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #01618d, #00cdef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.brand .logo-name { font-size: 10px; margin-top: 4px; }
+
+.nav { display: flex; gap: 42px; }
+.nav a {
+  font-family: var(--font-nav);
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--navy);
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.nav a:hover,
+.nav a.active { border-bottom-color: var(--navy); }
+
+/* ===== Hero ===== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 40px 50px;
+}
+/* Centre tout le bloc de texte du hero (citation, titre, slogan, dates, bouton) */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.quote {
+  font-family: var(--font-quote);
+  color: var(--cyan);
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 44px;
+}
+.title {
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 29px;
+}
+.tagline {
+  font-family: var(--font-title);
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+}
+.pills { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 62px; }
+.pill {
+  font-family: var(--font-title);
+  font-size: 15px;
+  text-transform: uppercase;
+  background: rgba(10, 26, 58, 0.5);
+  padding: 14px 28px;
+  border-radius: 10px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--cyan);
+  color: var(--navy);
+  font-size: 20px;
+  font-weight: 600;
+  padding: 19px 26px;
+  border-radius: 999px;
+  transition: transform 0.15s, background 0.15s;
+}
+.btn:hover { background: #33d6f5; transform: translateY(-2px); }
+
+.hero-logo { text-align: center; }
+.hero-logo img { width: 180px; max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.hero-logo .logo-name { font-size: 22px; margin-top: 10px; }
+
+/* ===== About ===== */
+.about {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+.section-title {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #8fb3c7;
+  margin-bottom: 8px;
+}
+.divider { border: none; height: 8px; background: var(--line); margin-bottom: 28px; }
+
+.about-text {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.rounds {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.round, .total {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: 14px;
+  text-transform: uppercase;
+  height: 44px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.round {
+  width: 120px;
+  padding: 0;
+  background: var(--navy);
+  border: 1px solid var(--navy-border);
+  border-radius: 15px;
+}
+.total {
+  background: var(--cyan);
+  color: var(--navy);
+  font-weight: 700;
+  border-radius: 20px;
+}
+.equals { color: var(--cyan); font-weight: 700; }
+
+/* ===== Challenges (cartes) ===== */
+.challenges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 40px 60px;
+}
+.card {
+  background: var(--white);
+  color: var(--navy);
+  border-radius: 20px;
+  border-top: 6px solid var(--navy);
+  padding: 20px 24px 28px;
+  min-height: 119px;
+  text-align: center;
+}
+.card-1, .card-3 { border-top-color: var(--cyan); }
+.card-num {
+  display: block;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+.card h3 {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/* ===== Footer ===== */
+.footer {
+  scroll-margin-top: 70px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 32px 40px 16px;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.footer-title {
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.footer-sub { font-family: var(--font-title); font-style: italic; font-size: 0.65rem; text-transform: uppercase; }
+
+.footer-links { display: flex; flex-direction: column; gap: 4px; font-size: 0.75rem; }
+.footer-heading { font-family: var(--font-title); font-style: italic; font-size: 0.7rem; text-transform: uppercase; }
+.footer-links a:hover { color: var(--cyan); }
+
+.footer-logo { height: 80px; width: auto; }
+
+.footer-contact { text-align: right; }
+.footer-question { font-size: 1rem; }
+.footer-contact-title { font-size: 1.4rem; font-weight: 500; margin-bottom: 8px; }
+.footer-small { font-size: 0.7rem; }
+.footer-small a { text-decoration: underline; }
+
+.socials { border-left: 3px solid var(--cyan); padding-left: 12px; }
+.socials img { height: 120px; width: auto; display: block; }
+
+.copyright { text-align: center; font-size: 0.7rem; margin-top: 24px; opacity: 0.8; }
+
+/* ===== Responsive (tablette et mobile) ===== */
+@media (max-width: 900px) {
+  .challenges { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .site-header { flex-direction: column; gap: 8px; padding: 8px 16px; }
+  .brand-logo { height: 56px; }
+  .nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .nav a { font-size: 0.8rem; }
+  .hero { flex-direction: column-reverse; text-align: center; padding: 32px 20px; }
+  .pills { justify-content: center; }
+  .hero-logo img { width: 150px; }
+  .about, .challenges, .footer { padding-left: 20px; padding-right: 20px; }
+  .challenges { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-contact { text-align: center; }
+  .socials { border-left: none; padding-left: 0; }
+}
