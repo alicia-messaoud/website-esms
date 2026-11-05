@@ -373,3 +373,24 @@ a { color: inherit; text-decoration: none; }
   .agenda-table td:last-child { text-align: left; margin-top: 8px; }
   .agenda-table td:last-child:empty { display: none; }
 }
+/* ===== Social media icons ===== */
+.socials {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  border-left: 3px solid var(--cyan);
+  padding: 4px 0 4px 26px;
+}
+
+.socials a {
+  color: var(--white);
+  font-size: 26px;
+  line-height: 1;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.socials a:hover {
+  color: var(--cyan);
+  transform: scale(1.15);
+}

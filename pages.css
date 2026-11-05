@@ -84,3 +84,11 @@ main {
   .page-intro { font-size: 18px; }
   .star { width: 50px; }
 }
+@media (max-width: 700px) {
+  main { padding: 20px; }
+  .page-grid { grid-template-columns: 1fr; }
+  .page-title { font-size: 22px; padding: 20px 32px; }
+  .page-intro { font-size: 18px; }
+  .star { width: 50px; }
+}
+
