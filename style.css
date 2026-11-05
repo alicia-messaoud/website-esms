@@ -296,3 +296,80 @@ a { color: inherit; text-decoration: none; }
   .footer-contact { text-align: center; }
   .socials { border-left: none; padding-left: 0; }
 }
+
+
+/* ===== Agenda ===== */
+.agenda {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 40px 60px;
+}
+
+.agenda-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* Header row stays for screen readers, hidden visually */
+.agenda-table thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.agenda-table td {
+  padding: 14px 0;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.agenda-table tr:last-child td { border-bottom: none; }
+
+.agenda-table td:first-child {
+  width: 220px;
+  padding-right: 16px;
+  font-family: var(--font-title);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+  white-space: nowrap;
+}
+.agenda-table td:nth-child(2) {
+  padding-right: 16px;
+  font-size: 16px;
+}
+.agenda-table td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Challenge rows are highlighted, breaks are dimmed */
+.is-round td:first-child { color: var(--cyan); }
+.is-round td:nth-child(2) { font-weight: 600; }
+.is-break td { color: #8fb3c7; }
+
+.round-tag {
+  display: inline-block;
+  background: var(--cyan);
+  color: var(--navy);
+  font-family: var(--font-title);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+@media (max-width: 700px) {
+  .agenda { padding-left: 20px; padding-right: 20px; }
+  .agenda-table, .agenda-table tbody, .agenda-table tr, .agenda-table td { display: block; }
+  .agenda-table tr { padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+  .agenda-table tr:last-child { border-bottom: none; }
+  .agenda-table td, .agenda-table tr:last-child td { padding: 0; border-bottom: none; }
+  .agenda-table td:first-child { width: auto; font-size: 15px; }
+  .agenda-table td:nth-child(2) { margin-top: 4px; font-size: 15px; }
+  .agenda-table td:last-child { text-align: left; margin-top: 8px; }
+  .agenda-table td:last-child:empty { display: none; }
+}
