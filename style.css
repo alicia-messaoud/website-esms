@@ -265,7 +265,11 @@ a { color: inherit; text-decoration: none; }
 .footer-heading { font-family: var(--font-title); font-style: italic; font-size: 0.7rem; text-transform: uppercase; }
 .footer-links a:hover { color: var(--cyan); }
 
-.footer-logo { height: 80px; width: auto; }
+.footer-logo {
+  height: 80px;
+  width: auto;
+  transform: translateX(180px);
+}
 
 .footer-contact { text-align: right; }
 .footer-question { font-size: 1rem; }
