@@ -84,3 +84,21 @@ main {
   .page-intro { font-size: 18px; }
   .star { width: 50px; }
 }
+
+/*=========CARD INTERACTIVE */
+
+.card-interactive {
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Images are hidden until the expanded view */
+.card-image {
+  display: none;
+}
